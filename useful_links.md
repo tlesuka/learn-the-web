@@ -10,4 +10,12 @@
 - https://cheatsheets.shecodes.io/css
 - [CSS Legal Color Values](https://www.w3schools.com/cssref/css_colors_legal.php)
 - [CSS Fonts](https://www.w3schools.com/Css/css_font.asp)
+- [Fonts](https://www.cssfontstack.com/)
 - [CSS Web Safe Fonts](https://www.w3schools.com/cssref/css_websafe_fonts.php)
+- [Backgrounds](https://www.toptal.com/designers/subtlepatterns/)
+- [Photos1](https://www.toptal.com/designers/subtlepatterns/)
+- [Photos2](https://pixabay.com/)
+- [Photos3](https://unsplash.com/)
+
+# Flexbox
+- [cheat sheet](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
