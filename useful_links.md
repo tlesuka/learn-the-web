@@ -19,3 +19,6 @@
 
 # Flexbox
 - [cheat sheet](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+
+# JavaScript
+- [Conditionals](https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-control-flow/cheatsheet)
