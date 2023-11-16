@@ -23,3 +23,4 @@
 # JavaScript
 - [Conditionals](https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-control-flow/cheatsheet)
 -  [Functions](https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-functions/cheatsheet)
+-  [Errors and Error Handling](https://www.codecademy.com/learn/webdev-intermediate-javascript/modules/errors-and-error-handling/cheatsheet)
