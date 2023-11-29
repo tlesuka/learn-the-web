@@ -101,4 +101,6 @@ function game(){
 
 }
 
+game()
+
 
