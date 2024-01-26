@@ -1,0 +1,171 @@
+:root {
+    --dark-background: #131313;
+    --body-containers: #222023;
+    --accent-color: hsl(187, 53%, 72%);
+    --light-text: #e8d4ea;
+    --light-background: #4e4848; 
+}
+
+body {
+    background-image: url(stardust.png);
+    color: var(--light-text);
+    font-family: sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+button {
+    font-family: inherit;
+    color: var(--dark-background);
+    background-color: var(--accent-color);
+    border-radius:12px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-size: 32px;font-weight: bold;
+    border: 4px solid #000; 
+    box-shadow: 5px 5px 10px 2px rgba(0,0,0,0.4);
+    cursor: pointer;
+    font-family: Kavoon;
+    text-shadow: 1px 1px #000000;
+}
+
+
+.header {
+    background-color: var(--dark-background);
+    display: flex;
+    justify-content: center;
+    padding: 40px 0px;
+    font-family: Kavoon; 
+}
+
+.title {
+    color: var(--accent-color);
+    font-size: 60px;
+    text-shadow: 2px 2px #000000;
+    text-decoration-line: var(--dark-background);
+    text-align: center;
+}
+
+.footer {
+    background-color: var(--dark-background);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.gitHubLogo {
+    height: 20px;
+}
+
+.main {
+    text-align: center;
+}
+
+.infoBoardContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.infoBoard {
+    background-color: var(--body-containers);
+    width: 500px;
+    height: 150px;
+    border-radius: 12px;
+    text-align: center;
+    margin: 40px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid #000; 
+}
+
+.buttons {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+}
+
+.choiceBtn {
+    width: 200px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.choiceBtn:hover {
+    transform: scale(1.1);
+}
+
+.scoreBoardContainer {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px;
+}
+
+.playerBoard,
+.computerBoard {
+    padding: 12px 100px;
+    text-align: center;
+    background-color: var(--body-containers);
+    border-radius: 12px;
+    width: 150px;
+    border: 4px solid #000;
+    }
+
+
+.endgameMessageContainer {
+    background-color: var(--dark-background) ;
+    text-align: center;
+    padding: 40px;
+    width: 600px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid #000; 
+    border-radius: 12px;
+}
+
+.endgameMessage {
+    color: var(--light-text);
+    font-size: 40px;
+    font-weight: bold;
+    padding-bottom: 80px;
+}
+
+.resetBtn {
+    padding: 20px;
+}
+
+.resetBtn:hover {
+    transform: scale(1.1);
+}
+
+/*modal css*/
+.modal {
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+

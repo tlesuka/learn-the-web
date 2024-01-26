@@ -4,8 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kavoon&family=Montserrat:wght@600&display=swap');
+    </style> 
 </head>
 <body>
-    <script src="javaScript2.js"></script>
+    <header class="header">
+        <h1 class="title">ROCK PAPER SCISSORS</h1>
+    </header>
+
+    <main>
+        <div class="infoBoardContainer">
+            <div class="infoBoard">
+                <div class="roundMessage" id="roundMessage"></div>
+                <p>Choose your weapon</p>
+            </div>
+        </div>
+        <div class="buttons">
+            <button class="choiceBtn" id="rockBtn">ROCK</button>
+            <button class="choiceBtn" id="paperBtn">PAPER</button>
+            <button class="choiceBtn" id="scissorsBtn">SCISSORS</button>
+        </div>
+    
+        <div class="scoreBoardContainer">
+            <div class="playerBoard">
+                <p class="choiceText" id="playerChoiceText">?</p>
+                <p class="scoreBoard" id="playerScoreBoard">Player: 0</p> 
+            </div>
+            <div class="computerBoard">
+                <p class="choiceText" id="computerChoiceText">?</p>    
+                <p class="scoreBoard" id="computerScoreBoard">Computer: 0</p> 
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Copyright @ tlesuka</p>
+        <a href="https://github.com/tlesuka">
+            <img class="gitHubLogo" src="github-mark-white.png" ></img>
+        </a>
+    </footer>
+
+    <div class="modal" id="endgameModal">
+        <div class="endgameMessageContainer">
+            <div class="endgameMessage" id="endgameMessage"></div>
+            <button class="resetBtn" id="resetBtn">PLAY AGAIN</button>
+        </div> 
+    </div>
+
+    <script src="javaScript.js"></script>
 </body>
-</html>

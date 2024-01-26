@@ -1,106 +1,125 @@
+//bind html elements
+const choiceBtns = document.querySelectorAll(".choiceBtn");
+const playerScoreBoard = document.getElementById("playerScoreBoard");
+const playerChoiceText = document.getElementById("playerChoiceText");
+const computerScoreBoard = document.getElementById("computerScoreBoard");
+const computerChoiceText = document.getElementById("computerChoiceText");
+const roundMessage = document.getElementById("roundMessage");
+const endgameMessage = document.getElementById("endgameMessage");
+const resetBtn = document.getElementById("resetBtn");
+const endgameModal = document.getElementById("endgameModal");
+
+//bind listeners
+resetBtn.addEventListener('click', resetGame)
+
+// playerScore, computerScore and roundWinner variables 
+let playerScore = 0;
+let computerScore = 0; 
+let roundWinner = "";
+const startMessage = "First to score 5 points wins the game";
+roundMessage.textContent = startMessage;
+
+//function that returns a random number
 function randomNumber(number) {
     return Math.floor(Math.random() * number) + 1;
 }
 
+//function that randomly returns ROCK, PAPER or SCISSORS
 function getComputerChoice() {
     let computerNumber = randomNumber(3);
     let choice = "";
 
     switch (computerNumber) {
         case 1:
-            choice = "rock";
+            choice = "ROCK";
             break;
         case 2:
-            choice = "paper";
+            choice = "PAPER";
             break;
         case 3:
-            choice = "scissors";
+            choice = "SCISSORS";
             break;
     }
     return choice;
 }
 
-
-
-function getPlayerChoice() {
-    let playerChoice = prompt("rock, paper or scissors ?").toLowerCase();
-    if ((playerChoice != "rock") && (playerChoice != "paper") && (playerChoice != "scissors"))  {
-        alert("You have to choose rock, paper or scissors!");
-        return getPlayerChoice();
-    }
-    return playerChoice;
-}
-
-
+// function that plays one round
 function playRound(playerChoice, computerChoice) {
-    let message = "";
-
-    if(playerChoice === "rock") {
-        if(computerChoice === "paper") {
-            message = "You Lose! Paper beats Rock.";
-        } else if(computerChoice === "scissors") {
-            message = "You Win! Rock beats Scissors.";
-        } else {
-            message = "It`s a tie!";
-        }
-    } else if(playerChoice === "paper") {
-        if(computerChoice === "rock") {
-            message = "You Win! Paper beats Rock."
-        } else if(computerChoice === "scissors") {
-            message = "You Lose! Scissors beats Paper."
-        } else {
-            message = "It`s a tie!"
-        }
-    } else if(playerChoice === "scissors") {
-        if(computerChoice === "rock") {
-            message = "You Lose! Rock beats scissors."
-        } else if(computerChoice === "paper") {
-            message = "You Win! Scissors beats Paper."
-        } else {
-            message = "It`s a tie!"
-        }
+    if(playerChoice === computerChoice) {
+        roundWinner = "tie"
     }
-    return message;
+    if(
+        (playerChoice === "ROCK" && computerChoice === "SCISSORS") ||
+        (playerChoice === "SCISSORS" && computerChoice === "PAPER") ||
+        (playerChoice === "PAPER" && computerChoice === "ROCK")
+    ) {
+        playerScore++
+        roundWinner = "player"
+    }
+    if(
+        (computerChoice === "ROCK" && playerChoice === "SCISSORS") ||
+        (computerChoice === "SCISSORS" && playerChoice === "PAPER") ||
+        (computerChoice === "PAPER" && playerChoice === "ROCK") 
+    ) {
+        computerScore++
+        roundWinner = "computer"
+    }
+}
+
+function isGameOver() {
+    return playerScore === 5 || computerScore === 5
 }
 
 
-
-function game(){
-    let playerScore = 0;
-    let computerScore = 0;
-
-    for (let i = 0; i < 5; i++){
-        console.log("Round " + i)
-        let computerChoice = getComputerChoice();
-        let playerChoice = getPlayerChoice();
-        let roundResult = playRound(playerChoice, computerChoice);   
-        console.log(
-            `Player: ${playerChoice} VS. Computer: ${computerChoice}`
-        );
-        console.log(roundResult);
-
-        if (roundResult.search("You Win!") > -1) {
-            playerScore++;
-        } else if (roundResult.search("You Lose!") > -1) {
-            computerScore++;
-        }
-    }
-
-    console.log("*Final Results*");
-    console.log(
-        `PlayerScore: ${playerScore} & Computer Score: ${computerScore}`
-    );
-
-    if (playerScore < computerScore) {
-        console.log("You Lose!");
-    } else if (playerScore > computerScore) {
-        console.log("You Win!");
+choiceBtns.forEach(button => button.addEventListener("click", () => {
+    let playerChoice = button.textContent;
+    let computerChoice = getComputerChoice();
+    playRound(playerChoice, computerChoice);
+    updateHtml(playerChoice, computerChoice);
+    if(isGameOver()) {
+        setFinalMessage();
+        // Pop up
+        openEndgameModal();
     } else {
-        console.log("It`s a tie!");
+        //clear game message
+        endgameMessage.textContent = "";
     }
+}));
 
+function updateHtml(playerChoice, computerChoice){
+    playerChoiceText.textContent = playerChoice;
+    computerChoiceText.textContent = computerChoice;
+    if(roundWinner === "tie") {
+        roundMessage.textContent = "It`s a tie!"
+    } else if(roundWinner === "player") {
+        roundMessage.textContent = "You won!"
+    } else if(roundWinner === "computer") {
+        roundMessage.textContent = "You lost!"
+    }
+    playerScoreBoard.textContent = `Player: ${playerScore}`;
+    computerScoreBoard.textContent = `Computer: ${computerScore}`;    
+}
+ 
+function setFinalMessage() {
+    return playerScore > computerScore
+    ? (endgameMessage.textContent = "You beat the computer!")
+    : (endgameMessage.textContent = "You lost to the computer!")
 }
 
-game()
+function resetGame () {
+    playerScore = 0;
+    computerScore = 0; 
+    roundWinner = "";
+    updateHtml("?", "?");
+    closeEndgameModal();
+    roundMessage.textContent = startMessage;
+}
 
+function openEndgameModal() {
+    endgameModal.style.display = "flex";
+  }
+  
+  function closeEndgameModal() {
+    endgameModal.style.display = "none";
 
+  }
