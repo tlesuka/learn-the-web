@@ -8,5 +8,4 @@ https://www.theodinproject.com/lessons/foundations-fundamentals-part-4
 - [Loops2](https://javascript.info/while-for)
 
 -------
-[Exercises](https://www.theodinproject.com/lessons/foundations-fundamentals-part-4
-)
+[Exercises](https://github.com/TheOdinProject/javascript-exercises#readme)
