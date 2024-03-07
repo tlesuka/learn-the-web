@@ -1,0 +1,95 @@
+:root {
+    --background: #242222;
+    --font: #121111;
+    --border: #333;
+    --screen: #dfd7d7;
+    --calculator: #bb9797;
+    --btn: #dfd7d7;
+    --btn-hover: #c3bcbc;
+    --btn-clearDeleteBtn: #79aab5;
+    --btn-clearDelete-hover: #6397a3;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--font);
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+      }
+
+  .main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    padding: 10px;
+    margin-top: 50px;
+  }
+
+.calculator {
+    background-color: var(--calculator);
+    width: 400px;
+    border: 2px var(--border) solid;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+  }
+
+  .btn {
+    padding: 20px;
+    border: 2px var(--border) solid;
+    border-radius: 5px;
+    background-color: var(--btn);
+    font-size: 20px;
+  }
+
+  .btn:hover {
+    background-color: var(--btn-hover);
+  }
+
+   .screen {
+    padding: 10px 20px;
+    border: 2px var(--border) solid;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background-color: var(--screen);
+    text-align: right;
+    word-wrap: break-word;
+    word-break: break-all;
+  }
+  
+  .screenCurrent {
+    min-height: 64px;
+    font-size: 40px;
+  }
+  
+  .span-2 {
+    grid-column: span 2;
+    background-color: var(--btn-clearDeleteBtn);
+  }
+
+  .span-2:hover {
+    background-color: var(--btn-clearDelete-hover);
+  }
+
+  .footer {
+    color: #dfd7d7;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.gitHubLogo {
+    height: 20px;
+}
