@@ -10,10 +10,20 @@
     --btn-clearDelete-hover: #6397a3;
   }
 
+  .roboto-mono-500{
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  button {
+    font-family: inherit
+  }
+
   body {
     background-color: var(--background);
     color: var(--font);
-    font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     display: flex;
     flex-direction: column;
@@ -34,60 +44,60 @@
     background-color: var(--calculator);
     width: 400px;
     border: 2px var(--border) solid;
-    border-radius: 15px;
+    border-radius: 40px;
     padding: 20px;
-}
+} 
 
 .buttons-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px;
-  }
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
 
-  .btn {
-    padding: 20px;
-    border: 2px var(--border) solid;
-    border-radius: 5px;
-    background-color: var(--btn);
-    font-size: 20px;
-  }
+.btn {
+  padding: 20px;
+  border: 2px var(--border) solid;
+  border-radius: 40px;
+  background-color: var(--btn);
+  font-size: 20px;
+}
 
-  .btn:hover {
-    background-color: var(--btn-hover);
-  }
+.btn:hover {
+  background-color: var(--btn-hover);
+}
 
-   .screen {
-    padding: 10px 20px;
-    border: 2px var(--border) solid;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    background-color: var(--screen);
-    text-align: right;
-    word-wrap: break-word;
-    word-break: break-all;
-  }
-  
-  .screenCurrent {
-    min-height: 64px;
-    font-size: 40px;
-  }
-  
-  .span-2 {
-    grid-column: span 2;
-    background-color: var(--btn-clearDeleteBtn);
-  }
+  .screen {
+  padding: 10px 20px;
+  border: 2px var(--border) solid;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  background-color: var(--screen);
+  text-align: right;
+  word-wrap: break-word;
+  word-break: break-all;
+}
 
-  .span-2:hover {
-    background-color: var(--btn-clearDelete-hover);
-  }
+.screenCurrent {
+  min-height: 64px;
+  font-size: 40px;
+}
 
-  .footer {
-    color: #dfd7d7;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+.span-2 {
+  grid-column: span 2;
+  background-color: var(--btn-clearDeleteBtn);
+}
+
+.span-2:hover {
+  background-color: var(--btn-clearDelete-hover);
+}
+
+.footer {
+  color: #dfd7d7;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
 .gitHubLogo {
